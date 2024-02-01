@@ -15,6 +15,11 @@ function login(){
     window.location.href = "http://localhost:5173/home";
   })
   .catch((error) => {
-    console.log(error);
+    if(error.message == 'User does not exist'){
+      document.getElementById("errorLabel").innerText = "User does not exist";
+    }
+    else{
+      document.getElementById("errorLabel").innerText = "Try again later";
+    }
   })
 }
